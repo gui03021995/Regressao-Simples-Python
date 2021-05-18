@@ -59,31 +59,11 @@ ax = sns.lmplot(x='year', y='price', data=dataset)
 import statsmodels.api as sm
 
 #x.loc[dataset['fuelType'] == 'Diesel', ['fuelType']] = 0
-#x.loc[dataset['fuelType'] == 'Electric', ['fuelType']] = 1
-#x.loc[dataset['fuelType'] == 'Hybrid', ['fuelType']] = 2
-#x.loc[dataset['fuelType'] == 'Other', ['fuelType']] = 3
-#x.loc[dataset['fuelType'] == 'Petrol', ['fuelType']] = 4
-
-#x.loc[dataset['transmission'] == 'Manual', ['transmission']] = 0
-#x.loc[dataset['transmission'] == 'Automatic', ['transmission']] = 1
-#x.loc[dataset['transmission'] == 'Semi-Auto', ['transmission']] = 2
-
 x['fuelType'] = x['fuelType'].replace(['Diesel', 'Electric', 'Hybrid','Other','Petrol'],[0,1,2,3,4])
 x['transmission'] = x['transmission'].replace(['Manual', 'Automatic', 'Semi-Auto'],[0,1,2])
 
 Y = dataset['price']
 X = sm.add_constant(x)
-
-#x2.loc[dataset2['fuelType'] == 'Diesel', ['fuelType']] = 0
-#x2.loc[dataset2['fuelType'] == 'Electric', ['fuelType']] = 1
-#x2.loc[dataset2['fuelType'] == 'Hybrid', ['fuelType']] = 2
-#x2.loc[dataset2['fuelType'] == 'Other', ['fuelType']] = 3
-#x2.loc[dataset2['fuelType'] == 'Petrol', ['fuelType']] = 4
-
-#x2.loc[dataset2['transmission'] == 'Manual', ['transmission']] = 0
-#x2.loc[dataset2['transmission'] == 'Automatic', ['transmission']] = 1
-#x2.loc[dataset2['transmission'] == 'Semi-Auto', ['transmission']] = 2
-
 
 x2['fuelType'] = x2['fuelType'].replace(['Diesel', 'Electric', 'Hybrid','Other','Petrol'],[0,1,2,3,4])
 x2['transmission'] = x2['transmission'].replace(['Manual', 'Automatic', 'Semi-Auto'],[0,1,2])
